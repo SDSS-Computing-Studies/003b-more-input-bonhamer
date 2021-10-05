@@ -15,11 +15,13 @@ You earned $0.2 interest.
 (2 points) 
 """
 import math
-principal = float(input('Enter your amount: '))
-rate = float(input('Enter the rate: '))
-r = (rate / 100)
-time = float(input('Enter the # of days: '))
-x = int(principal*r*time)/365
-af= round(x, 1)
-ss= ("$" + str(af))
-print("You earned:", ss , "interest")
+
+principal = float(input("Enter your principal: "))
+rate = float(input("Enter your interest rate: "))
+days = float(input("Enter days this month: "))
+interest = (principal * rate * days / 365) / 100
+tempX = interest*100
+tempX = math.floor(tempX)
+interest = tempX/100
+interest = round(interest, 2)
+print(f"You earned ${interest} interest.")
